@@ -188,4 +188,50 @@
     console.log(languages.slice(1,2)) //1 là vị trí bắt đầu cắt, 2 là vị trí kết thúc cắt
     //kết quả: ['PHP']
 
+// Object
+    var emailKey =  'email';
+    var myInfo = {
+        name: 'Nhan Cao',
+        address: 'Ho Chi Minh',
+        age: 24,
+        [emailKey]: 'caoletuongnhan@gmail.com',
+        getName:  function(){
+            return this.name;
+        }
+    };
+    console.log(myInfo.getName());
+// Function -> Method (phương thức)
+// Other -> Property (thuộc tính)
 
+// Object constructor (xây dựng đối tượng)
+    function User(firstName, lastName, avatar){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.avatar = avatar;
+
+        this.getName = function(){
+            return `${this.firstName} ${this.lastName} ${this.avatar}`
+        }
+    }
+        var author = new User('Son','Dang','Avatar');
+        var user = new User('Nhan','Cao','Avatar');
+//Object prototype
+    function User(firstName, lastName, avatar){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.avatar = avatar;
+
+    this.getName = function(){
+        return `${this.firstName} ${this.lastName} ${this.avatar}`
+    }
+}   
+    User.prototype.className = 'F8';
+    User.prototype.getClassName = function(){
+        return this.className;
+    }
+
+    var user = new User('Son','Dang','Avatar 1');
+    var user2 = new User('Nhan','Cao','Avatar 2');
+
+    console.log(user.className);
+    console.log(user2.getClassName());
