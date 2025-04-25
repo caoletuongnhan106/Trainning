@@ -103,25 +103,25 @@
 
 //Spread (...)
 // Dùng để nối mảng
-    var array1 = ['Javascript', 'Ruby', 'PHP'];
-    var array2 = ['ReactJS', 'Dart'];
-    var array3 = [...array1, ...array2];
+    let array1 = ['Javascript', 'Ruby', 'PHP'];
+    let array2 = ['ReactJS', 'Dart'];
+    let array3 = [...array1, ...array2];
     console.log(array3); //kết quả: ['Javascript', 'Ruby', 'PHP','ReactJS', 'Dart']
 // Dùng hợp nhất 2 object lại với nhau
-    var object1 = {
+    const object1 = {
         name: 'Javascript'
     };
-    var object2 = {
+    const object2 = {
         price: 1000
     };
-    var object3 = {
+    const object3 = {
         ...object1,
         ...object2
     };
     console.log(object3) //kết quả: {name: 'Javascript', price: 1000}
 // Dùng để truyền tham số cho hàm
-    var array = ['Javascript', 'Ruby', 'PHP'];
-    function logger(a, b , c){
+    let array = ['Javascript', 'Ruby', 'PHP'];
+    const loggers = (a, b , c) => {
         console.log(a, b, c);
     }
-    logger(...array); //kết quả: Javascript Ruby PHP
+    loggers(...array); //kết quả: Javascript Ruby PHP
